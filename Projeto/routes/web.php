@@ -15,6 +15,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+//-------------------rotas de crud funcionario---------------
+
 Route::get('/formFuncionario', 'funcionarioController@forCadasFunc');
+Route::post('/formFuncionario/cadastro', 'funcionarioController@CadasFunc');
+
+
+//-------------------rotas de crud caminhão---------------
+
+
 Route::get('/formCaminhao', 'caminhaoController@forCadasCam');
 

@@ -13,8 +13,18 @@
 
 
     <div class="container">
+            @if (count($errors) > 0)
+            <div class="alert alert-danger">
+            <ul>
+            @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+            @endforeach
+            </ul>
+            </div>
+            @endif
 
-        <form>
+        <form action="/formFuncionario/cadastro" method="post">
+            {{ csrf_field() }}
             <div class="form-group">
                 <label>
                     <strong>Nome:</strong><input class="form-control" type="text" name="nome">
@@ -28,7 +38,7 @@
 
             <div class="form-group">
                 <label>
-                    <strong>Data:</strong><input class="form-control" type="date" name="data">
+                    <strong>Data:</strong><input class="form-control" type="date" name="datadeNacimento">
                 </label>
             </div>
             <div class="form-group">
