@@ -15,6 +15,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/formFuncionario', 'forCadasFunc@CadastroFuncionario');
-
+Route::get('/formFuncionario', 'funcionarioController@forCadasFunc');
+Route::get('/formCaminhao', 'caminhaoController@forCadasCam');
 
