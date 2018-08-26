@@ -19,7 +19,9 @@ class CriaTabelaFuncionarios extends Migration
             $table->string('cpf');
             $table->date('datadeNacimento');
             $table->string('telefone');
-            $table->float('salario');                                         
+            $table->float('salario');  
+           $table->integer('caminhao_id')->unsigned()->nullable()->onDelete('set null');    
+            $table->foreign('caminhao_id')->references('id')->on('caminhoes');                                     
             $table->timestamps();
         });
     }

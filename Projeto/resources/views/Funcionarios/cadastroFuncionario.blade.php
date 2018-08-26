@@ -20,6 +20,10 @@
             <li>{{ $error }}</li>
             @endforeach
             </ul>
+            </div> 
+            @else           
+            <div class="alert alert-primary">
+                {{'Funcionário Cadastrado com sucesso'}}
             </div>
             @endif
 
@@ -42,7 +46,7 @@
                 </label>
             </div>
             <div class="form-group">
-                <label>
+                <label>                       
                     <strong>Telefone:</strong> <input class="form-control" type="tel" name="telefone">
                 </label>
             </div>

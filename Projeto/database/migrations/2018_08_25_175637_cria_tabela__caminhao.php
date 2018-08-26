@@ -20,9 +20,7 @@ class CriaTabelaCaminhao extends Migration
             $table->string('marca');
             $table->string('cor');
             $table->string('ano');
-            $table->string('renavan');    
-            $table->integer('id_funcionario')->unsigned();    
-            $table->foreign('id_funcionario')->references('id')->on('funcionarios');                            
+            $table->string('renavan');                                                     
             $table->timestamps();
         });
     }

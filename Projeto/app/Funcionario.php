@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Caminhao;
 
 class Funcionario extends Model
 {
@@ -11,13 +12,16 @@ class Funcionario extends Model
     'cpf',
     'datadeNacimento',
     'telefone',
-    'salario'
-   
-
+    'salario',
+    'caminhao_id'
    ];
    protected $table = 'funcionarios';
+
    
    public function caminhao(){
-    return $this->BelongsTo(Caminhao::class , 'id_caminhao');   
+    return $this->BelongsTo(Funcionario::class , 'caminhao_id');   
    }
+   
+
+   
 }

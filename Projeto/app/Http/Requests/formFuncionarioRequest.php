@@ -21,15 +21,41 @@ class formFuncionarioRequest extends FormRequest
      *
      * @return array
      */
-    public function rules()
+     function rules()
     {
         return [     
                
-            'nome' => 'required|min:2',
-            'cpf' => 'required|max:25',
-            'datadeNacimento' => 'required|max:6|min:3',
-            'telefone'=>'required|max:10|min:10',
+            'nome' => 'required',
+            'cpf' => 'required|max:11|min:11',
+            'datadeNacimento' => 'required|max:10|min:8',
+            'telefone'=>'required|max:10|min:8',
             'salario'=>'required|max:6|min:3'
-        ];
+        ];       
+
+        
     }
+
+    function messages() {
+        return [
+            
+        'nome.required' => 'O campo nome é obrigatório',
+        'cpf.required' => 'O campo cpf é obrigatório',
+        'cpf.max' => 'O campo cpf deve ter no maximo 11 digitos',
+        'cpf.min' => 'O campo cpf deve ter no minimo 11 digitos',
+        'datadeNacimento.min' => 'O campo data de nacimento deve ter no minimo 10 digitos',
+        'datadeNacimento.max' => 'O campo data de nacimento deve ter no maximo 10 digitos',
+        'datadeNacimento.required' => 'O campo data de nacimento é obrigatorio',
+        'telefone.max' => 'O campo telefone deve ter no maximo 10 digitos',
+        'telefone.min' => 'O campo telefone deve ter no minimo 8 digitos',
+        'telefone.required' => 'O campo telefone é obrigatorio',
+        'salario.required' => 'O campo salário é obrigatório',
+        'salario.max' => 'O campo salário deve ter no maximo 6 digitos',
+        'salario.min' => 'O campo salário deve ter nominimo 3 digitos'           
+
+        
+        ];
+        }
+
+
+
 }

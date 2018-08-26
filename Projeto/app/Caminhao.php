@@ -3,7 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-
+use App\Funcionario;
 class Caminhao extends Model
 {
    protected $fillable =[
@@ -12,13 +12,20 @@ class Caminhao extends Model
     'marca',
     'cor',
     'ano',
-    'renavan',
-    'id_funcionario'
+    'renavan',   
+    
    ];
+   
+   protected $table = 'caminhoes'; 
 
-   protected $table = 'caminhoes';
-
-   public function funcionario(){
-    return $this->BelongsTo(Funcionario::class , 'id_funcionario');   
-   }
+  
+ 
+      public function funcionario()
+       {
+           return $this->hasOne(Funcionario::class, 'caminhao_id');
+       }
+   
+  
+  
+  
 }

@@ -19,10 +19,17 @@ Route::get('/', function () {
 
 Route::get('/formFuncionario', 'funcionarioController@forCadasFunc');
 Route::post('/formFuncionario/cadastro', 'funcionarioController@CadasFunc');
+Route::get('/formFuncionario/listagem', 'funcionarioController@listFunc');
+
 
 
 //-------------------rotas de crud caminhão---------------
 
+Route::get('/formCaminhao', 'caminhaoController@forCadasCamin');
+Route::post('/formCaminhao/cadastro', 'caminhaoController@CadasCamin');
+Route::get('/formCaminhao/listagem', 'caminhaoController@listCamin');
 
-Route::get('/formCaminhao', 'caminhaoController@forCadasCam');
+//-----------------------------------rota de vinculo--------------------
+
+Route::get('/vincular', 'funcionarioController@forVincular');
 
