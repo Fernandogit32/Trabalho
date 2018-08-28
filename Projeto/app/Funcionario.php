@@ -19,7 +19,7 @@ class Funcionario extends Model
 
    
    public function caminhao(){
-    return $this->BelongsTo(Funcionario::class , 'caminhao_id');   
+    return $this->BelongsTo(Caminhao::class , 'caminhao_id');   
    }
    
 

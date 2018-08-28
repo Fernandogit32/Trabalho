@@ -38,7 +38,13 @@
                   <td>{{$caminhao->cor}}</td>   
                   <td>{{$caminhao->ano}}</td>   
                   <td>{{$caminhao->renavan}}</td>
-                <td>{{$caminhao->funcionario->nome}}</td>
+                <td>@if($caminhao->funcionario===null)
+                  {{'nenhum funcionario'}}
+                  @else
+                  {{$caminhao->funcionario->nome}}
+                  @endif
+                </td>
+
                                     
                                   
                   </tr>

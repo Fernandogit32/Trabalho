@@ -35,12 +35,12 @@
                   <td>{{$funcionario->telefone}}</td>   
                   <td>{{$funcionario->salario}}</td>   
                   <td>
-                     @if($funcionario->id_caminhao===null)
+                     @if($funcionario->caminhao===null)
                            {{'Funcinnario sem caminhao'}}
                           @else
                          {{$funcionario->caminhao->placa}}
                       @endif
-
+                    
                   </td>
                   
             @endforeach        
