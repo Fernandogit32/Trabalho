@@ -15,6 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+
 //-------------------rotas de crud funcionario---------------
 
 Route::get('/formFuncionario', 'funcionarioController@forCadasFunc');
@@ -32,4 +34,6 @@ Route::get('/formCaminhao/listagem', 'caminhaoController@listCamin');
 //-----------------------------------rota de vinculo--------------------
 
 Route::get('/vincular', 'funcionarioController@forVincular');
+
+
 

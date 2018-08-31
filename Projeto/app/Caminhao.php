@@ -12,8 +12,7 @@ class Caminhao extends Model
     'marca',
     'cor',
     'ano',
-    'renavan',   
-    
+    'renavan',       
    ];
    
    protected $table = 'caminhoes'; 
