@@ -45,3 +45,6 @@ Route::get('/funcionario/desvincular/{id}', 'funcionarioController@funcionariode
 
 
 
+//---------------------------------rota home-------------
+
+Route::get('/home', 'Controller@frmhome');
