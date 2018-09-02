@@ -22,7 +22,9 @@ Route::get('/', function () {
 Route::get('/formFuncionario', 'funcionarioController@forCadasFunc');
 Route::post('/formFuncionario/cadastro', 'funcionarioController@CadasFunc');
 Route::get('/formFuncionario/listagem', 'funcionarioController@listFunc');
-
+Route::delete('/funcionario/excluir/{id}','funcionarioController@excluirfuncionario');
+Route::get('/funcionario/editar/{id}','funcionarioController@formEditarfuncionario');
+Route::post('/Funcionario/editar', 'funcionarioController@funcionarioEditar');
 
 
 //-------------------rotas de crud caminhão---------------
@@ -30,15 +32,16 @@ Route::get('/formFuncionario/listagem', 'funcionarioController@listFunc');
 Route::get('/formCaminhao', 'caminhaoController@forCadasCamin');
 Route::post('/formCaminhao/cadastro', 'caminhaoController@CadasCamin');
 Route::get('/formCaminhao/listagem', 'caminhaoController@listCamin');
-Route::delete('/caminhao/excluir/{id}',"caminhaoController@excluircaminhao");
-Route::get('/caminhao/editar/{id}',"caminhaoController@formEditarCaminhao");
-Route::post('/Caminhao/editar', 'caminhaoController@cainhaoEditar');
+Route::delete('/caminhao/excluir/{id}','caminhaoController@excluircaminhao');
+Route::get('/caminhao/editar/{id}','caminhaoController@formEditarCaminhao');
+Route::post('/Caminhao/editar', 'caminhaoController@caminhaoEditar');
 
 //-----------------------------------rota de vinculo--------------------
 
 Route::get('/vincular', 'funcionarioController@forVincular');
 Route::post('/vinculo', 'funcionarioController@vinculo');
 Route::get('/caminhao/desvincular/{id}', 'caminhaoController@Caminhaodesvincular');
+Route::get('/funcionario/desvincular/{id}', 'funcionarioController@funcionariodesvincular');
 
 
 

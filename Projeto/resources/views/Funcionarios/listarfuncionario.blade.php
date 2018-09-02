@@ -15,6 +15,7 @@
                   <th scope="col">caminhao</th>
                   <th scope="col">Editar</th>
                   <th scope="col">Excluir</th>
+                  <th scope="col">Desvincular</th>
                 </tr>
               </thead>
                                
@@ -34,18 +35,31 @@
                           @else
                          {{$funcionario->caminhao->placa}}
                       @endif
+
+                      <td>
+                        <form  method="get" action="/funcionario/editar/{{$funcionario->id}}"> 
+                          {{ csrf_field()}}                  
+                          <button type="submit" class="btn btn-success">Editar</button>
+                      </form>
+                    </td>                                   
+                      <td>
+                        <form  method="post" action="/funcionario/excluir/{{$funcionario->id}}"> 
+                          <?php echo csrf_field(); ?>
+                          <?php echo method_field('DELETE'); ?>                  
+                          <button type="submit" class="btn btn-danger">Excluir</button>
+                      </form>                 
+                      </td>
+                      <td>
+                        <form  method="get" action="/funcionario/desvincular/{{$funcionario->id}}"> 
+                          {{ csrf_field()}}                  
+                          <button type="submit" class="btn btn-warning">Desvincular</button>
+                      </form>
+                    </td> 
                     
                   </td>
-                  <td>
-                    <form  method="post" action="filmes/excluir/{{$funcionario->id}}">                   
-                      <button type="button" class="btn btn-success">Editar</button>
-                  </form>                 
-                  </td>
-                  <td>
-                  <form  method="post" action="filmes/excluir/{{$funcionario->id}}">                   
-                    <button type="button" class="btn btn-danger">Excluir</button>
-                </form>
-              </td>
+                  
+                
+              
                   
             @endforeach        
                 </table>

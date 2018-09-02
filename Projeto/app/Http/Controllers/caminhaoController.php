@@ -60,7 +60,7 @@ class caminhaoController extends Controller
     }
 
     
-    public function cainhaoEditar(formCaminhaoRequest $request) 
+    public function caminhaoEditar(formCaminhaoRequest $request) 
     {              
        $caminhao= Caminhao::find($request->id);
         $caminhao->update($request->all());
