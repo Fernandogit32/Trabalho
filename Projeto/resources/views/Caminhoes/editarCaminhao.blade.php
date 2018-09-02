@@ -14,15 +14,13 @@
             @endforeach
             </ul>
             </div> 
-            @else           
-            <div class="alert alert-primary">
-                {{'Caminhão Editado com sucesso'}}
-            </div>
+            
         @endif
 
 
         <form action="/Caminhao/editar" method="post">
-            {{ csrf_field()}}           
+            {{ csrf_field()}}  
+            <input name="id" value="{{$caminhao->id}}" type="hidden"/>         
             <div class="form-group">
                 <label>
                 <strong>Placa:</strong><input class="form-control" type="text" name="placa" value="{{$caminhao->placa}}">

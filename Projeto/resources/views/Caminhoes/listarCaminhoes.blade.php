@@ -17,6 +17,7 @@
                   <th scope="col">funcionario </th>
                   <th scope="col">Editar</th>
                   <th scope="col">Excluir</th>
+                  <th scope="col">Desvincular</th>
                 </tr>
               </thead>
                                
@@ -50,6 +51,12 @@
                     <button type="submit" class="btn btn-danger">Excluir</button>
                 </form>                 
                 </td>
+                <td>
+                  <form  method="get" action="/caminhao/desvincular/{{$caminhao->id}}"> 
+                    {{ csrf_field()}}                  
+                    <button type="submit" class="btn btn-warning">Desvincular</button>
+                </form>
+              </td> 
                            
                   </tr>
                   

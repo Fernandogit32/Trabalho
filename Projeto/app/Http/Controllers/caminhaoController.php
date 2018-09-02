@@ -33,8 +33,6 @@ class caminhaoController extends Controller
         $caminhoes = Caminhao::all();    
         return view("Caminhoes\listarCaminhoes")->with("caminhoes", $caminhoes);       
     }
-
-
 	
 
 	
@@ -61,6 +59,21 @@ class caminhaoController extends Controller
         return view("caminhoes/editarCaminhao")->with("caminhao", $caminhao);        
     }
 
-
+    
+    public function cainhaoEditar(formCaminhaoRequest $request) 
+    {              
+       $caminhao= Caminhao::find($request->id);
+        $caminhao->update($request->all());
+       return redirect()->action("caminhaoController@listCamin");
+    }
    
+    public function Caminhaodesvincular(request $request){
+        $caminhao =  Caminhao::find($request->id);
+        if($caminhao->funcionario != null){
+        $funcionario = Funcionario::find($caminhao->funcionario->id);
+        $funcionario->caminhao_id = null;        
+        $funcionario->save();        
+    }
+    return redirect()->action("caminhaoController@listCamin");
+    }
 }

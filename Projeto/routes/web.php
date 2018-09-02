@@ -32,11 +32,13 @@ Route::post('/formCaminhao/cadastro', 'caminhaoController@CadasCamin');
 Route::get('/formCaminhao/listagem', 'caminhaoController@listCamin');
 Route::delete('/caminhao/excluir/{id}',"caminhaoController@excluircaminhao");
 Route::get('/caminhao/editar/{id}',"caminhaoController@formEditarCaminhao");
-
+Route::post('/Caminhao/editar', 'caminhaoController@cainhaoEditar');
 
 //-----------------------------------rota de vinculo--------------------
 
 Route::get('/vincular', 'funcionarioController@forVincular');
 Route::post('/vinculo', 'funcionarioController@vinculo');
+Route::get('/caminhao/desvincular/{id}', 'caminhaoController@Caminhaodesvincular');
+
 
 
