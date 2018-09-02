@@ -3,7 +3,7 @@
 
 @section('conteudo') 
     
-        <div class="container">
+ 
                 <table class="table table-dark">
               <thead>            
                 <tr>                  
@@ -13,6 +13,8 @@
                   <th scope="col">Telefone</th>
                   <th scope="col">Salario</th>
                   <th scope="col">caminhao</th>
+                  <th scope="col">Editar</th>
+                  <th scope="col">Excluir</th>
                 </tr>
               </thead>
                                
@@ -28,14 +30,24 @@
                   <td>{{$funcionario->salario}}</td>   
                   <td>
                      @if($funcionario->caminhao===null)
-                           {{'Funcinnario sem caminhao'}}
+                           {{'Funcionário sem caminhão'}}
                           @else
                          {{$funcionario->caminhao->placa}}
                       @endif
                     
                   </td>
+                  <td>
+                    <form  method="post" action="filmes/excluir/{{$funcionario->id}}">                   
+                      <button type="button" class="btn btn-success">Editar</button>
+                  </form>                 
+                  </td>
+                  <td>
+                  <form  method="post" action="filmes/excluir/{{$funcionario->id}}">                   
+                    <button type="button" class="btn btn-danger">Excluir</button>
+                </form>
+              </td>
                   
             @endforeach        
-
+                </table>
 
             @endsection

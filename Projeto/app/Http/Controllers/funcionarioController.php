@@ -25,8 +25,20 @@ class funcionarioController extends Controller
 
     function forVincular(){
         $funcionarios= Funcionario::all();
-        $caminhaoes=Caminhao::all();
+        $caminhoes=Caminhao::all();
 
-        return view('vincular')->with("funcionarios", $funcionarios);  ;
+        return view('vincular')->with("funcionarios", $funcionarios)->with("caminhoes", $caminhoes);
+    }
+
+ 
+   
+
+   function vinculo(request $request) 
+    {                      
+        $funcionario =Funcionario::find($request->id_fun);
+        $caminhao = Caminhao::find($request->id_cam);    
+        $funcionario->caminhao_id = $caminhao->id;        
+        $funcionario->save();
+        return redirect()->action("funcionarioController@forVincular"); 
     }
 }
